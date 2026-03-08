@@ -1,0 +1,60 @@
+
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (DotSettings)
+*.csproj.DotSettings.user
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+# Uncomment if you use Visual Studio Code
+.vscode/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# Build Tasks
+ServiceFabricBackup/
+
+# Output of the build process
+[Bb]in/
+[Oo]bj/
+
+# User Secrets
+secrets.json
+
+# Dotnet CLI
+.dotnet/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Serilog Logs
+logs/
+*.log
