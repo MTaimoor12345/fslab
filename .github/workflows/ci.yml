@@ -2,9 +2,7 @@ name: SportsStore CI
 
 on:
   push:
-    branches: [ "main", "initials-feature-*" ]
   pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
