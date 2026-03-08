@@ -1,0 +1,36 @@
+name: SportsStore CI
+
+on:
+  push:
+    branches: [ "main", "initials-feature-*" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore SportsSln.sln
+
+    - name: Build
+      run: dotnet build SportsSln.sln --no-restore --configuration Release
+
+    - name: Test
+      run: dotnet test SportsSln.sln --no-build --configuration Release --verbosity normal --logger "trx;LogFileName=test_results.trx"
+
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: .NET Tests
+        path: "**/test_results.trx"
+        reporter: dotnet-trx
